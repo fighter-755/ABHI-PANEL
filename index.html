@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ᴄʏʙᴇʀ - ᴛᴇᴀᴍ</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #222;
+        }
+
+        /* Cover Photo */
+        .cover-photo {
+            width: 100%;
+            height: 200px;
+            background-image: url('https://i.ibb.co/DrGgD0Z/50894529e2643cf797e68819bf14ddfb.jpg'); /* Your provided cover photo URL */
+            background-size: cover;
+            background-position: center;
+            
+        }
+
+        /* Profile Section */
+        .profile-section {
+            text-align: center ;
+          margin-top: -50px;
+        }
+
+        .profile-photo {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            border: 3px solid #fff;
+            background-color: #fff;
+            overflow: hidden;
+            margin: auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .profile-photo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .profile-name {
+            font-size: 24px;
+            font-weight: bold;
+            margin: 10px 0 5px;
+        }
+
+        .profile-nickname {
+            font-size: 18px;
+            color: #666;
+        }
+
+        .profile-bio {
+            font-size: 16px;
+            color: #333;
+            margin-top: 5px;
+        }
+
+        /* Content Section */
+        .content {
+            margin: 20px auto;
+            width: 90%;
+            max-width: 400px;
+            background: #222;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 0 15px red;
+            overflow-y: auto;
+            position: relative;
+        }
+
+        input[type="password"] {
+            padding: 10px;
+            margin: 10px 0;
+            width: 100%;
+            border: 1px solid #222;
+            border-radius: 5px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 0 15px red;
+            overflow-y: auto;
+            position: relative;
+        }
+
+        button {
+            padding: 10px 20px;
+            background-color: #222;
+            color: cyan;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 0 15px red;
+            overflow-y: auto;
+            position: relative;
+        }
+
+        button:hover {
+            background-color: #444;
+        }
+        
+        
+      body {
+            background: #222;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 0 15px red;
+            overflow-y: auto;
+            position: relative;;
+        }
+        .container {
+            width: 400px;
+            background: #222;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 15px red;
+            margin-bottom: 20px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 0 15px red;
+            overflow-y: auto;
+            position: relative;;
+            display: none; /* Initially hide all containers */
+        }
+        .container label {
+            display: block;
+            color: #fff;
+            font-size: 16px;
+            margin-bottom: 8px;
+        }
+        .container textarea {
+            width: 100%;
+            min-height: 50px;
+            border: 2px solid rgb(11, 127, 205);
+            padding: 8px;
+            font-size: 16px;
+            margin-bottom: 10px;
+            border-radius: 4px;
+            color: #fff;
+            background: #222;
+            resize: none; /* Disable resizing */
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 0 15px red;
+            overflow-y: auto;
+            position: relative;;
+        }
+        .container button {
+            padding: 8px 25px;
+            background: #222;
+            color: white;
+            border: none;
+            border-radius: 3px;
+            font-size: 17px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 0 15px red;
+            overflow-y: auto;
+            position: relative;;
+        }
+        .container button:hover {
+            background: cyan;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 0 15px red;
+            overflow-y: auto;
+            position: relative;;
+        }
+        .show-hide-button {
+            margin-bottom: 20px;
+            padding: 10px 20px;
+            background: #222;
+            color: white;
+            border: none;
+            border-radius: 3px;
+            font-size: 18px;
+            cursor: pointer;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 0 15px red;
+        }
+        .show-hide-button:hover {
+            background: cyan;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 0 15px red;
+        }
+        .disclaimer-box {
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: #222;
+            padding: 15px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            max-width: 600px;
+            margin: auto;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 0 15px red;
+            overflow-y: auto;
+            position: relative;;
+        }
+        .disclaimer-box h2 {
+            margin-top: 0;
+            font-size: 20px;
+        }
+        .hamburger-menu {
+            display: inline-block;
+            cursor: pointer;
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            
+        }
+
+        .line {
+            width: 35px;
+            height: 4px;
+            background-color: red;
+            margin: 6px 0;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 0 15px red;
+            overflow-y: auto;
+            position: relative;
+        }
+
+        .menu {
+            display: none; /* Hidden by default */
+            position: absolute;
+            top: 60px;
+            left: 20px;
+            background-color: #222;
+            border-radius: 8px;
+            padding: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            
+        }
+
+        .menu button {
+            display: flex;
+            align-items: center;
+            background-color: #222;
+            color: white;
+            border: none;
+            padding: 10px;
+            margin: 5px 0;
+            text-align: left;
+            cursor: pointer;
+            border-radius: 4px;
+            width: 100%;
+        }
+
+        .menu button:hover {
+            background-color: #222;
+        }
+
+        .menu button img {
+            width: 20px; /* Adjust size of icons */
+            height: 20px;
+            margin-right: 10px; /* Space between icon and text */
+            border-radius: 50%; /* Makes the image circular */
+        }
+    </style>
+</head>
+<body>
+   
+    <!-- Cover Photo -->
+    <div class="cover-photo"></div>
+    <div class="hamburger-menu" onclick="toggleMenu()">
+      <div class="line"></div>
+      <div class="line"></div>
+      <div class="line"></div>
+    </div>
+        <div class="menu" id="menu">
+          <button onclick="openLink('https://instagram.com')">
+            <img src="https://i.ibb.co/ySWyq6H/images-1.jpg" alt="Instagram">ɪɴꜱᴛᴀɢʀᴀᴍ
+          </button>
+          <button onclick="openLink('https://facebook.com')">
+            <img src="https://i.ibb.co/YLtnfd7/images-4.png" alt="Facebook">ꜰᴀᴄᴇʙᴏᴏᴋ
+          </button>
+          <button onclick="openLink('https://youtube.com')">
+            <img src="https://i.ibb.co/28QnrXF/images-2.png" alt="YouTube">ʏᴏᴜᴛᴜʙᴇ
+          </button>
+          <button onclick="openLink('addding link')">
+            <img src="https://i.ibb.co/Jxx05Gv/images-3.jpg" alt="Telegram">ᴛᴇʟᴇɢʀᴀᴍ
+          </button>
+          <button onclick="openLink('addding link')">
+            <img src="https://i.ibb.co/vsX15GX/images.jpg" alt="Telegram">ꜰᴇᴇᴅʙᴀᴄᴋ
+            </div>
+
+    <!-- Profile Section -->
+    <div class="profile-section">
+        <div class="profile-photo">
+            <img src="https://i.ibb.co/DrGgD0Z/50894529e2643cf797e68819bf14ddfb.jpg" alt="Profile Photo">
+        </div>
+        <div class="profile-name" class="mb-3" style="color: red;"> ᴄʏʙᴇʀ - ᴛᴇᴀᴍ  (ᴀʙʜɪ ʏᴀᴅᴀᴠ )</div>
+        <div class="profile-nickname">ɪɴᴅɪᴀɴ ʙᴏʏ</div>
+        <div class="profile-bio"class="mb-3" style="color: cyan;"> ᴅᴇᴠᴇʟᴏᴘᴇʀ | ᴀʙʜɪ ʏᴀᴅᴀᴠ | ᴄᴏᴅᴇʀ</div>
+    </div>
+
+    <!-- Password Form -->
+    <div class="content">
+        <h2 class="mb-3" style="color: red;"> ᴇɴᴛᴇʀ ʏᴏᴜʀ ᴋᴇʏ</h2>
+        <input type="password" id="password" placeholder="ᴇɴᴛᴇʀ ʏᴏᴜʀ ᴋᴇʏ">
+        <button onclick="checkPassword()">ꜱᴜʙᴍɪᴛ</button>
+    </div>
+    <h1></h1>
+        <!-- Button to Show/Hide All Boxes -->
+    <button class="show-hide-button" onclick="toggleBoxes()"class="profile-name" class="mb-3" style="color: red;">ꜱʜᴏᴡ ᴀʟʟ ᴋᴇʏꜱ</button>
+    
+    <div class="disclaimer-box">
+      <h2>Disclaimer</h2>
+      <p>This app is intended for your personal use. While we strive to ensure that the app functions correctly, we do not guarantee that it will operate without errors, on time, or be free from defects. The use of the app is at your own risk. We will not be held liable for any loss or damage, whether direct, indirect, incidental, special, or consequential.</p>
+   <h2>© 2024 Abhi Yadav tools. All Rights Reserved.
+</h2>
+    </div>
+    <h1></h1>
+
+    <!-- 10 Boxes with Copy Buttons -->
+    <div class="container" id="box1">
+        <label for="text1">ꜰʀᴇᴇ ꜰɪʀᴇ ʜᴀᴄᴋ ꜰɪʟᴇꜱ  ᴋᴇʏ :  🔥</label>
+        <textarea id="text1" readonly class="mb-3" style="color: cyan;">dacc9402251a3550d0c42b91d15904470dndj8883shsuejsjsnsjj03990c88148ede84d3nsnsn528428100dacc9402251a3550d0c42b91d15904470ndndn88830373737ꜱʜꜱnsndʙʙꜱʙ990c88148ede84d3528428100dacc9402251a3550d0c42b91d15904470888ndndjdjdn30399bb0c88148ede84d35284281hsshhh7373hdacc9402251a3550d0c42b91d15904470dndj8883shsuejsjsnsjj03990c88148ede84d3nsnsn528428100dacc9402251a3550d0c42b91d15904470ndndn88830373737ꜱʜꜱnsndʙʙꜱʙ990c88148ede84d3528428100dacc9402251a3550d0c42b91d15904470888ndndjdjdn30399bb0c88148ede84d35284281hsshhh7373hz</textarea>
+        <button onclick="copy('text1')"class="mb-3" style="color: red;">ᴄᴏᴘʏ ᴋᴇʏ</button>
+    </div>
+    <div class="container" id="box2">
+        <label for="text2">ᴛᴏᴋᴇɴ ᴄʜᴇᴄᴋᴇʀ ᴋᴇʏ : 🔥</label>
+        <textarea id="text2" readonly class="mb-3" style="color: cyan;">dacc4bhs829402251a3550d0c42b91d15904470dndj8883shsuejsjsnsjj03990c88148ede84d3nsnsn528428100dacc9402251a3550d0c42b91d15904470ndndn88830373737ꜱʜꜱnsndʙʙꜱʙ990c88148ede84d3528428100dacc9402251a3550d0c42b91d15904470888ndndjdjdn30399bb0c88148ede84d35284281hsshhh7373hdacc9402251a3550d0c42b91d15904470dndj8883shsuejsjsnsjj03990c88148ede84d3nsnsn528428100dacc9402251a3550d0c42b91d15904470ndndn88830373737ꜱʜꜱnsndʙʙꜱʙ990c88148ede84d3528428100dacc9402251a3550d0c42b91d15904470888ndndjdjdn30399bb0c88148ede84d35284281hsshhh7373hz73bsbz8383bzbzbz828</textarea>
+        <button onclick="copy('text2')"class="mb-3" style="color: red;">ᴄᴏᴘʏ ᴋᴇʏ</button>
+    </div>
+    <div class="container" id="box3">
+        <label for="text3">ᴄᴏɴᴠᴇʀꜱᴀᴛɪᴏɴ ᴋᴇʏ :  🔥</label>
+        <textarea id="text3" readonly class="mb-3" style="color: cyan;">dacc7464bhs829402251a3550d0c42b91d15904470dndj8883shsuejsjsnsjj03990c88148ede84d3nsnsn528428100dacc9402251a3550d0c42b91d15904470ndndn88830373737ꜱʜꜱnsndʙʙꜱʙ990c88148ede84d3528428100dacc9402251a3550d0c42b91d15904470888ndndjdjdn30399b3y2thbb0c88148ede84d35284281hsshhh7373hdacc9402251a3550d0c42b91d15904470dndj8883shsuejsjsnsjj03990c88148ede84d3nsnsn528428100dacc9402251a3550d0c42b91d15904470ndndn88830373737ꜱʜꜱnsndʙʙꜱʙ990c88148ede84d3528428100dacc9402251a3550d0c42b91d15904470888ndndjdjdn30399bb0c88148ede84d35284281hsshhh7373hz73bsbz8383bzbzbz82883h</textarea>
+        <button onclick="copy('text3')"class="mb-3" style="color: red;">ᴄᴏᴘʏ ᴋᴇʏ</button>
+    </div>
+    <div class="container" id="box4">
+        <label for="text4">ᴅᴇᴠᴇʟᴏᴘᴇʀ ᴋᴇʏꜱ : 🔥</label>
+        <textarea id="text4" readonly class="mb-3" style="color: cyan;">dacc7464bhs2251a3550d0c42b91d15904470dndj8883shsuejsjsnsjj03990c88148ede84d3nsnsn528428100dacc9402251a3550d0c42b91d15904470ndndn88830373737ꜱʜꜱnsndʙʙꜱʙ990c88148ede84d3528428100dacc9402251a3550d0c42b91d15904470888ndndjdjdn30399b3y2thbb0c88148ede84d35284281hsshhh7373hdacc9402251a3550d0c42b904470dndj8883shsuejsjsnsjj03990c88148ede84d3nsnsn528428100dacc9402251a3550d0c42b91d15904470ndndn88830373737ꜱʜꜱnsndʙʙꜱʙ990c88148ede84d3528428100dacc9402251a3550d0c42b91d15904470888ndndjdjdn30399bb0c88148ede84d35284281hsshhh7373hz73bsbz8383bzb</textarea>
+        <button onclick="copy('text4')"class="mb-3" style="color: red;">ᴄᴏᴘʏ ᴋᴇʏ</button>
+    </div>
+    <div class="container" id="box5">
+        <label for="text5">ᴀʙᴏᴜᴛ ᴋᴇʏꜱ : 💞🔥</label>
+        <textarea id="text5" readonly class="mb-3" style="color: cyan;">dacu76c7464bhs2251a3550d0c42b91d15904470dndj8883shsuejsjsnsjj03990c88148ede84d3nsnsn528428100dacc9402251a3550d0c42b91d15904470ndndn88830373737ꜱʜꜱnsndʙʙꜱʙ990c88148ede84d3528428100dacc9402251a3550d0c42b91d15904470888ndndjdjdn30399b3y2thbb0c88148ede84d35284281hsshhh7373hdacc9402251a3550d0c42b904470dndjy65448883shsuejsjsnsjj03990c88148ede84d3nsnsn528428100dacc9402251a3550d0c42b91d15904470ndndn88830373737ꜱʜꜱnsndʙʙꜱʙ990c88148ede84d3528428100dacc9402251a3550d0c42b91d15904470888ndndjdjdn30399bb0c88148ede84d35284281hsshhh7373hz73bsbz8383bzb7u6544ggg</textarea>
+        <button onclick="copy('text5')"class="mb-3" style="color: red;">ᴄᴏᴘʏ ᴋᴇʏ</button>
+    </div>
+    <div class="container" id="box6">
+        <label for="text6">ᴘᴏʀɴ ʀᴇᴇʟꜱ ᴋᴇʏ : 🔥🤤</label>
+        <textarea id="text6" readonly class="mb-3" style="color: cyan;">dacu767464bhs2251ai76t550d0c42b91d15904470dndj8883shsuejsjsnsjj03990c88148ede84d3nsnsn528428100dacc9476552251a3550d0c42b91d15904470ndndn88830373737ꜱʜꜱnsndʙʙꜱʙ990c88148ede84d3528428100dacc9402251a3550d0c42b91d15904470888ndndjdjdn30399b3y2thbb0c88148ede84d35284281hsshhh7373hdacc9402251a3550d0c42b904470dndjy65448883shsuejsjsnsjj03990c88148ede84d3nsnsn528428100dyt669402251a3550d0c42b91d15904470ndndn88830373737ꜱʜꜱnsndʙʙꜱʙ990c88148ede84d3528428100dacc9402251a3550d0c42b91d15904470888ndndjdjdn30399bb0c88148ede84d35284281hsshhh7373hz73bsbz8383bzb7u6544875</textarea>
+        <button onclick="copy('text6')">ᴄᴏᴘʏ ᴋᴇʏ</button>
+    </div>
+    <div class="container" id="box7">
+        <label for="text7">ɪᴍᴀɢᴇ ɢᴇɴʀᴀᴛᴇ ʟɪɴᴋ ᴊᴘɢ  🔥</label>
+        <textarea id="text7" readonly class="mb-3" style="color: cyan;">dacu7674676s2251ai76t550d0c42b91d15904470dndj8883shsuejsjsnsjj03990c88148ede84d3nsnsn528428100dacc9476552251a3550d0c42b91d15904470ndndn88830373737ꜱʜꜱnsndʙʙꜱʙ990c88148ede84d3528428100dacc9402251a3550d0c42b91d15904470888ndndjdjdn30399b3y2thbb0c88148ede84d35284281hsshhh7373hdacc9402251a3550d0c44470dndjy65448883shsuejsjsnsjj03990c88148ede84d3nsnsn528428100dyt669402251a3550d0c42b91d1590447dn88830373737ꜱʜꜱnsndʙʙꜱʙ990c88148ede84d3528428100dacc9402251a3550d0c42b91d15904470888ndndjdjdn30399bb0c88148ede84d35284281hsshhh7373hz73bsbz8383bzb7u654487hgg6</textarea>
+        <button onclick="copy('text7')"class="mb-3" style="color: red;">ᴄᴏᴘʏ ᴋᴇʏ</button>
+    </div>
+    <div class="container" id="box8">
+        <label for="text8">Rital</label>
+        <textarea id="text8" readonly class="mb-3" style="color: cyan;">dacu7674676si76t550d0c42b91d15904470dndj8883shsuejsjsnsjj03990c88148ede84d3nsnsn528428100dacc9476552251a3550d0c42b91d15904470ndndn88830373737ꜱʜꜱnsndʙʙꜱʙ990c88148ede84d3528428100dacc9402251a3550d0c42b91d15904470888ndndjdjdn30399b3y2thbb0c88148ede84d35284281hsshhh7373hdacc9402251a3550d0c44470d65448883shsuejsjsnsjj03990c88148ede84d3nsnsn528428100dyt669402251a3550d0c42b91d1590447dn88830373737ꜱʜꜱnsndʙʙꜱʙ990c88148ede84d3528428100dacc9402251a3550d0c42b91d15904470888ndndjdjdn30399bb0c88148ede84d35284281hsshhh7373hz73bsbz838</textarea>
+        <button onclick="copy('text8')"class="mb-3" style="color: red;">ᴄᴏᴘʏ ᴋᴇʏ</button>
+    </div>
+    <div class="container" id="box9">
+        <label for="text9">Rital</label>
+        <textarea id="text9" readonly class="mb-3" style="color: cyan;">dacu7674676si76t550d0c421d15904470dndj8883shsuejsjsnsjj03990c88148ede84d3nsnsn528428100dacc9476552251a3550d0c42b91d15904470ndndn88830373737ꜱʜꜱnsndʙʙꜱʙ990c88148ede84d3528428100dacc9402251a3550d0c42b91d15904470888ndndjdjdn30399b3y2thbb0chgfd56148ede84d35284281hsshhh7373hdacc9402251a3550d0c44470d65448883shsuejsjsnsjj03990c88148ede84d3nsnsn528428100dyt669402251a3550d0c42b91d1590447dn88830373737ꜱʜꜱnsndʙʙꜱʙ990c88148ede84d3528428100dacc9402251a3550d0c42b91d15904470888ndndjdjdn30399bb0c88148ede84d35284281hsshhh7373hz73bsbz838jh55555</textarea>
+        <button onclick="copy('text9')"class="mb-3" style="color: red;">ᴄᴏᴘʏ ᴋᴇʏ</button>
+    </div>
+    <div class="container" id="box10">
+        <label for="text10">Rital</label>
+        <textarea id="text10" readonly class="mb-3" style="color: cyan;">dacu7674676si76t550d0c421d15904470dndj8883shs73737hshsuejsjsnsjj03990c88148ede84d3nsnsn528428100dacc9476552251a3550d0c42b91d15904470ndndn88830373737ꜱʜꜱnsndʙʙꜱʙ990c88148ede84d3528428100dacc9402251a3550d0c42b91d15904470888ndndjdjdn30399b3y2thbb0chgfd56148ede84d35284281hsshhh7373hdacc9402251a3550d0c44470d65448883shsuejsjsnsjj03990c88148ede84d3nsnsn528428100dyshshdht669402251a3550d0c42b91d1590447dn88830373737ꜱʜꜱnsndʙʙꜱʙ990c88148ede84d3528428100dacc9402251a3550d0c42b91d15904470888ndndjdjdn30399bb0c88148ede84d35284281hsshhh7373hz73bsbz838jh55555jdjdu3</textarea>
+        <button onclick="copy('text10')"class="mb-3" style="color: red;">ᴄᴏᴘʏ ᴋᴇʏ</button>
+    </div>
+
+    <script>
+        function checkPassword() {
+            const password = document.getElementById("password").value;
+
+            // Password to Link Mapping
+            const links = {
+                "dacc9402251a3550d0c42b91d15904470dndj8883shsuejsjsnsjj03990c88148ede84d3nsnsn528428100dacc9402251a3550d0c42b91d15904470ndndn88830373737ꜱʜꜱnsndʙʙꜱʙ990c88148ede84d3528428100dacc9402251a3550d0c42b91d15904470888ndndjdjdn30399bb0c88148ede84d35284281hsshhh7373hdacc9402251a3550d0c42b91d15904470dndj8883shsuejsjsnsjj03990c88148ede84d3nsnsn528428100dacc9402251a3550d0c42b91d15904470ndndn88830373737ꜱʜꜱnsndʙʙꜱʙ990c88148ede84d3528428100dacc9402251a3550d0c42b91d15904470888ndndjdjdn30399bb0c88148ede84d35284281hsshhh7373hz": "https://sub4unlock.io/gQN8X",
+                "dacc4bhs829402251a3550d0c42b91d15904470dndj8883shsuejsjsnsjj03990c88148ede84d3nsnsn528428100dacc9402251a3550d0c42b91d15904470ndndn88830373737ꜱʜꜱnsndʙʙꜱʙ990c88148ede84d3528428100dacc9402251a3550d0c42b91d15904470888ndndjdjdn30399bb0c88148ede84d35284281hsshhh7373hdacc9402251a3550d0c42b91d15904470dndj8883shsuejsjsnsjj03990c88148ede84d3nsnsn528428100dacc9402251a3550d0c42b91d15904470ndndn88830373737ꜱʜꜱnsndʙʙꜱʙ990c88148ede84d3528428100dacc9402251a3550d0c42b91d15904470888ndndjdjdn30399bb0c88148ede84d35284281hsshhh7373hz73bsbz8383bzbzbz828": "https://1-page-sarver.vercel.app/",
+                "dacc7464bhs829402251a3550d0c42b91d15904470dndj8883shsuejsjsnsjj03990c88148ede84d3nsnsn528428100dacc9402251a3550d0c42b91d15904470ndndn88830373737ꜱʜꜱnsndʙʙꜱʙ990c88148ede84d3528428100dacc9402251a3550d0c42b91d15904470888ndndjdjdn30399b3y2thbb0c88148ede84d35284281hsshhh7373hdacc9402251a3550d0c42b91d15904470dndj8883shsuejsjsnsjj03990c88148ede84d3nsnsn528428100dacc9402251a3550d0c42b91d15904470ndndn88830373737ꜱʜꜱnsndʙʙꜱʙ990c88148ede84d3528428100dacc9402251a3550d0c42b91d15904470888ndndjdjdn30399bb0c88148ede84d35284281hsshhh7373hz73bsbz8383bzbzbz82883h": "https://2-page-sarver.vercel.app/",
+                "dacc7464bhs2251a3550d0c42b91d15904470dndj8883shsuejsjsnsjj03990c88148ede84d3nsnsn528428100dacc9402251a3550d0c42b91d15904470ndndn88830373737ꜱʜꜱnsndʙʙꜱʙ990c88148ede84d3528428100dacc9402251a3550d0c42b91d15904470888ndndjdjdn30399b3y2thbb0c88148ede84d35284281hsshhh7373hdacc9402251a3550d0c42b904470dndj8883shsuejsjsnsjj03990c88148ede84d3nsnsn528428100dacc9402251a3550d0c42b91d15904470ndndn88830373737ꜱʜꜱnsndʙʙꜱʙ990c88148ede84d3528428100dacc9402251a3550d0c42b91d15904470888ndndjdjdn30399bb0c88148ede84d35284281hsshhh7373hz73bsbz8383bzb": "https://fighter-755.github.io/SMS-BUTTON-/",
+                "dacu76c7464bhs2251a3550d0c42b91d15904470dndj8883shsuejsjsnsjj03990c88148ede84d3nsnsn528428100dacc9402251a3550d0c42b91d15904470ndndn88830373737ꜱʜꜱnsndʙʙꜱʙ990c88148ede84d3528428100dacc9402251a3550d0c42b91d15904470888ndndjdjdn30399b3y2thbb0c88148ede84d35284281hsshhh7373hdacc9402251a3550d0c42b904470dndjy65448883shsuejsjsnsjj03990c88148ede84d3nsnsn528428100dacc9402251a3550d0c42b91d15904470ndndn88830373737ꜱʜꜱnsndʙʙꜱʙ990c88148ede84d3528428100dacc9402251a3550d0c42b91d15904470888ndndjdjdn30399bb0c88148ede84d35284281hsshhh7373hz73bsbz8383bzb7u6544ggg": "https://fighter-755.github.io/ANDROID-HACK-BUTTON-/",
+                "dacu767464bhs2251ai76t550d0c42b91d15904470dndj8883shsuejsjsnsjj03990c88148ede84d3nsnsn528428100dacc9476552251a3550d0c42b91d15904470ndndn88830373737ꜱʜꜱnsndʙʙꜱʙ990c88148ede84d3528428100dacc9402251a3550d0c42b91d15904470888ndndjdjdn30399b3y2thbb0c88148ede84d35284281hsshhh7373hdacc9402251a3550d0c42b904470dndjy65448883shsuejsjsnsjj03990c88148ede84d3nsnsn528428100dyt669402251a3550d0c42b91d15904470ndndn88830373737ꜱʜꜱnsndʙʙꜱʙ990c88148ede84d3528428100dacc9402251a3550d0c42b91d15904470888ndndjdjdn30399bb0c88148ede84d35284281hsshhh7373hz73bsbz8383bzb7u6544875": "https://fikfap.com/",
+                "dacu7674676s2251ai76t550d0c42b91d15904470dndj8883shsuejsjsnsjj03990c88148ede84d3nsnsn528428100dacc9476552251a3550d0c42b91d15904470ndndn88830373737ꜱʜꜱnsndʙʙꜱʙ990c88148ede84d3528428100dacc9402251a3550d0c42b91d15904470888ndndjdjdn30399b3y2thbb0c88148ede84d35284281hsshhh7373hdacc9402251a3550d0c44470dndjy65448883shsuejsjsnsjj03990c88148ede84d3nsnsn528428100dyt669402251a3550d0c42b91d1590447dn88830373737ꜱʜꜱnsndʙʙꜱʙ990c88148ede84d3528428100dacc9402251a3550d0c42b91d15904470888ndndjdjdn30399bb0c88148ede84d35284281hsshhh7373hz73bsbz8383bzb7u654487hgg6": "https://fighter-755.github.io/Image-genrate-/",
+                "dacu7674676si76t550d0c42b91d15904470dndj8883shsuejsjsnsjj03990c88148ede84d3nsnsn528428100dacc9476552251a3550d0c42b91d15904470ndndn88830373737ꜱʜꜱnsndʙʙꜱʙ990c88148ede84d3528428100dacc9402251a3550d0c42b91d15904470888ndndjdjdn30399b3y2thbb0c88148ede84d35284281hsshhh7373hdacc9402251a3550d0c44470d65448883shsuejsjsnsjj03990c88148ede84d3nsnsn528428100dyt669402251a3550d0c42b91d1590447dn88830373737ꜱʜꜱnsndʙʙꜱʙ990c88148ede84d3528428100dacc9402251a3550d0c42b91d15904470888ndndjdjdn30399bb0c88148ede84d35284281hsshhh7373hz73bsbz838": "https://link8.com",
+                "dacu7674676si76t550d0c421d15904470dndj8883shsuejsjsnsjj03990c88148ede84d3nsnsn528428100dacc9476552251a3550d0c42b91d15904470ndndn88830373737ꜱʜꜱnsndʙʙꜱʙ990c88148ede84d3528428100dacc9402251a3550d0c42b91d15904470888ndndjdjdn30399b3y2thbb0chgfd56148ede84d35284281hsshhh7373hdacc9402251a3550d0c44470d65448883shsuejsjsnsjj03990c88148ede84d3nsnsn528428100dyt669402251a3550d0c42b91d1590447dn88830373737ꜱʜꜱnsndʙʙꜱʙ990c88148ede84d3528428100dacc9402251a3550d0c42b91d15904470888ndndjdjdn30399bb0c88148ede84d35284281hsshhh7373hz73bsbz838jh55555": "https://link9.com",
+                "dacu7674676si76t550d0c421d15904470dndj8883shs73737hshsuejsjsnsjj03990c88148ede84d3nsnsn528428100dacc9476552251a3550d0c42b91d15904470ndndn88830373737ꜱʜꜱnsndʙʙꜱʙ990c88148ede84d3528428100dacc9402251a3550d0c42b91d15904470888ndndjdjdn30399b3y2thbb0chgfd56148ede84d35284281hsshhh7373hdacc9402251a3550d0c44470d65448883shsuejsjsnsjj03990c88148ede84d3nsnsn528428100dyshshdht669402251a3550d0c42b91d1590447dn88830373737ꜱʜꜱnsndʙʙꜱʙ990c88148ede84d3528428100dacc9402251a3550d0c42b91d15904470888ndndjdjdn30399bb0c88148ede84d35284281hsshhh7373hz73bsbz838jh55555jdjdu3": "https://link10.com"
+            };
+
+// Check Password and Redirect
+            if (links[password]) {
+                window.location.href = links[password];
+            } else {
+                alert("Incorrect password!");
+            }
+        }
+        function copy(textId) {
+          // Selects the text in the <textarea> element
+          var textArea = document.getElementById(textId);
+          textArea.select();
+          textArea.setSelectionRange(0, 99999); // For mobile compatibility
+          // Copies the selected text to clipboard
+          document.execCommand("copy");
+          alert("Copied: " + textArea.value);
+        }
+        
+        function toggleBoxes() {
+          var boxes = document.querySelectorAll('.container');
+          boxes.forEach(function(box) {
+            if (box.style.display === "none") {
+              box.style.display = "block";
+            } else {
+              box.style.display = "none";
+            }
+          });
+        }
+        
+        function toggleMenu() {
+            const menu = document.getElementById('menu');
+            menu.style.display = menu.style.display === 'block' ? 'none' : 'block';
+        }
+
+        function openLink(url) {
+            window.open(url, '_blank');
+        }
+    
+
+    </script>
+    <footer>
+  
+</body>
+</html>
+
+
